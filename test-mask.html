@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { background: #eee; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+  .container { position: relative; width: 600px; height: 400px; cursor: crosshair; }
+  .base, .colored { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+  .colored {
+    -webkit-mask: url(#inkMask);
+    mask: url(#inkMask);
+  }
+</style>
+</head>
+<body>
+  <svg style="position:absolute; width:0; height:0;">
+    <defs>
+      <filter id="inkMaskFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="60" xChannelSelector="R" yChannelSelector="G" />
+        <feGaussianBlur stdDeviation="4" />
+        <feComponentTransfer>
+          <feFuncA type="linear" slope="5" intercept="-2" />
+        </feComponentTransfer>
+      </filter>
+      <mask id="inkMask" maskUnits="userSpaceOnUse">
+        <rect width="100%" height="100%" fill="white" />
+        <circle id="maskCircle" cx="-500" cy="-500" r="100" fill="black" filter="url(#inkMaskFilter)" />
+      </mask>
+    </defs>
+  </svg>
+
+  <div class="container" id="cont">
+    <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=800" class="base" style="filter: grayscale(100%);" />
+    <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=800" class="colored" />
+  </div>
+  <script>
+    const cont = document.getElementById('cont');
+    const circle = document.getElementById('maskCircle');
+    cont.addEventListener('mousemove', (e) => {
+      const rect = cont.getBoundingClientRect();
+      circle.setAttribute('cx', e.clientX - rect.left);
+      circle.setAttribute('cy', e.clientY - rect.top);
+    });
+  </script>
+</body>
+</html>

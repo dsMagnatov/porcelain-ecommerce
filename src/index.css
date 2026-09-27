@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&family=Marcellus&family=Poppins:wght@300;400;500;600&family=Herr+Von+Muellerhoff&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --font-serif: "Elsie Swash Caps", serif;
+  --font-elsie: "Elsie Swash Caps", serif;
+  --font-marcellus: "Marcellus", serif;
+  
+  --color-navy: #1A2077;
+  --color-bg: #ffffff;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-navy);
+  overflow-x: hidden;
+}
+
+.menu-item-selected {
+  text-decoration: line-through !important;
+  text-decoration-thickness: 1.5px !important;
+  text-decoration-color: #1A2077 !important;
+}

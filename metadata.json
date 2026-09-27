@@ -1,0 +1,6 @@
+{
+  "name": "Порцеляна",
+  "description": "Анімація першого екрану в стилі Obys Agency",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
