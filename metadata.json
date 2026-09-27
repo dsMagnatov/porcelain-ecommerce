@@ -1,6 +1,6 @@
 {
-  "name": "Порцеляна",
-  "description": "Анімація першого екрану в стилі Obys Agency",
+  "name": "LunarCraft",
+  "description": "Discover handcrafted porcelain figurines and artful pieces designed to bring timeless elegance to your space.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
